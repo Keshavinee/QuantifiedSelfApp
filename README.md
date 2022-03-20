@@ -1,2 +1,2 @@
 # QuantifiedSelfApp
-Web Application
+Web Application used for self tracking 
