@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ username }}-{{ tname }}</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ username }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>	
+	
+	<h2>{{ tname }} - Tracker</h2>
+	
+	<form action="/{{ username }}/{{ tname }}" method="POST" id="graph">
+		<div>
+			<label for="period">Select Period: </label>
+			<select name="period" id="period">
+			<option value="today">Today</option>
+			<option value="week">This week</option>
+			<option value="month">This month</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<input type="submit" value = "Enter">
+		</div>
+	</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ username }}</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ username }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>
+	
+	<h2>Log {{ tracker }}</h2>
+	
+	<form action="/{{ username }}/{{ tracker }}/add" method="POST" id="log">
+		Date Time Format : YYYY-MM-DD HH:MM:SS
+		<div>
+			<label>When </label>
+			<input type="datetime"name="on" required />
+		</div>
+		<br>
+		<div>
+			<label>Value </label>
+			<input type="text" name="value" required />
+		</div>
+		<br>
+		<div>
+			<label>Notes </label>
+			<input type="text" name="notes" required />	
+		</div>
+		<br>
+		<div>
+			<input type="submit" value = "Log it">
+		</div>
+	</form>
+
+</body>
+</html>
+
+

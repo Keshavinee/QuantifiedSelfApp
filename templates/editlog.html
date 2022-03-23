@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit logged event</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ t["user"] }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>
+	
+	<h2>Edit {{ t["tname"] }} on {{ t["on"] }}</h2>
+	
+	<form action="/{{ t["user"] }}/{{ t["tname"] }}/{{ t["on"] }}/edit" method="POST" id="update-event-form">
+		Date Time Format : YYYY-MM-DD HH:MM:SS
+		<div>
+			<label>When </label>
+			<input type="text" name="on" value={{ t["on"] }} required />
+		</div>
+		<br>
+		<div>
+			<label>Value </label>
+			<input type="text" name="value" value={{ t["value"] }} required />
+		</div>
+		<br>
+		<div>
+			<label>Notes </label>
+			<input type="text" name="notes" value={{ t["notes"] }} required />	
+		</div>
+		<br>
+		<div>
+			<input type="submit" value = "Log it">
+		</div>
+	</form>
+
+</body>
+</html>

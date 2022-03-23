@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit tracker</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ t["user"] }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>
+	
+	<h2>Edit {{ t["tname"] }}</h2>
+	
+	<form action="/{{ t["user"] }}/{{ t["tname"] }}/edit" method="POST" id="update-track-form">
+		<div>
+			<label>Name </label>
+			<input type="text" name="name" value={{ t["tname"] }} disabled />
+		</div>
+		<br>
+		<div>
+			<label>Description </label>
+			<input type="text" name="desc" value={{ t["desc"] }} required />
+		</div>
+		<br>
+		<div>
+			<label for="type">Tracker Type </label>
+			<select name="type" id="type" value={{ t["dtype"] }} disabled>
+			<option value="v1">Numerical</option>
+			<option value="v2">Multiple choice</option>
+			<option value="v3">Option 3</option>
+			</select>
+			
+		</div>
+		<br>
+		<div>
+			<label>Settings </label>
+			<input type="text" name="setting" value={{ t["setting"] }} />
+		</div>
+		<br>
+		<div>
+			<input type="submit" value = "Log it">
+		</div>
+	</form>
+
+</body>
+</html>

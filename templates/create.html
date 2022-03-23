@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ username }}</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ username }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>
+	
+	<h2>Add tracker</h2>
+	
+	<form action="/{{ username }}/create" method="POST" id="create">
+		<div>
+			<label>Name </label>
+			<input type="text" name="name" required />
+		</div>
+		<br>
+		<div>
+			<label>Description </label>
+			<input type="text" name="desc" required />
+		</div>
+		<br>
+		<div>
+			<label for="type">Tracker Type </label>
+			<select name="type" id="type">
+			<option value="v1">Numerical</option>
+			<option value="v2">Multiple choice</option>
+			<option value="v3">Option 3</option>
+			</select>
+			
+		</div>
+		<br>
+		<div>
+			<label>Settings </label>
+			<input type="text" name="setting" />
+		</div>
+		<br>
+		<div>
+			<input type="submit" value = "Log it">
+		</div>
+	</form>
+
+</body>
+</html>
+
+

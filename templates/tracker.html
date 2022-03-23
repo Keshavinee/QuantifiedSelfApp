@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ username }}</title>
+</head>
+<body>
+	<div style="position: relative; width: 1800px;">
+		<h1>Hello, {{ username }}</h1>
+	  	<div style="position: absolute; top: 0 ; right: 0; width: 100 px; text-align:right; color:blue; font-size:25px">
+	    		<a href="http://10.18.203.235:8080/" >logout</a>
+	  	</div>
+	 </div>	
+	
+	<table id = "track-user">
+		<tr>
+			<th>Tracker</th>
+			<th>Last tracked</th>
+			<th>Log new event</th>
+			<th>Actions</th>
+		</tr>
+	
+		{% for t in trackers %}
+			<tr>
+				<td><a href="/{{ t["tracker"]["user"] }}/{{ t["tracker"]["tname"] }}">{{ t["tracker"]["tname"] }}</a></td>
+				<td>{{ t["trackinfo"]["on"] }}</td>
+				<td><div style="text-align:center"><a href="/{{ t["tracker"]["user"] }}/{{ t["tracker"]["tname"] }}/add">+</a></td>
+				<td>
+				<a href="/{{ t["tracker"]["user"] }}/{{ t["tracker"]["tname"] }}/edit">Edit</a>
+				/ <a href="/{{ t["tracker"]["user"] }}/{{ t["tracker"]["tname"] }}/delete">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+	<a href="/{{ username }}/create" ><p style="text-align:center">+ Add Tracker</a>
+
+</body>
+</html>

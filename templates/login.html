@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quantified Self</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+	<h1>Quantified Self</h1>
+	<p>Track and measure yourself</p>
+	<br>
+	
+	<h2>Sign in</h2>
+	
+	<form action="/login" method="POST" id="login">
+		<div>
+			<label>Username :</label>
+			<input type="text" name="usr" required />
+		</div>
+		<br>
+		<div>
+			<label>Password :</label>
+			<input type="password" name="pwd" autocomplete="current-password" required="" id="id_password">
+			<i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+		</div>
+		<br>	
+		<div>
+			<input type="submit" value = "Login">
+		</div>
+	</form>
+	
+	<script>
+	  const togglePassword = document.querySelector('#togglePassword');
+	  const password = document.querySelector('#id_password');
+	 
+	  togglePassword.addEventListener('click', function (e) {
+	    // toggle the type attribute
+	    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+	    password.setAttribute('type', type);
+	    // toggle the eye slash icon
+	    this.classList.toggle('fa-eye-slash');
+	  });
+	</script>
+
+</body>
+</html>
+
+
